@@ -16,15 +16,45 @@
                 <h1 class='header'>Getz bomber</h1>
             </div>
             <div class='auth-form'>
-                <input class='input rounded shadow' placeholder="Логин" />
-                <input class='input rounded shadow' placeholder="Пароль" />
-                <button class='submit shadow rounded'>Войти</button>
-                <button class='theme-toggler submit shadow rounded'>TOGGLE THEME</button>
+                <input type='text' class='input rounded shadow' placeholder="Логин" id='login' />
+                <p class='error-text' id='login-text'>Введите логин!</p>
+                <input type='password' class='input rounded shadow' placeholder="Пароль" id='password' />
+                <p class='error-text' id='password-text'>Введите пароль!</p>
+                <button class='submit shadow rounded' id="AuthButton">Войти</button>
+                <button class='submit error-button shadow rounded' id='AuthError'>Ошибка</button>
+                <!-- <button class='theme-toggler submit shadow rounded'>TOGGLE THEME</button> -->
             </div>
         </div>
 
+        <div class="cabinet container shadow">
+            <img
+                src="https://picsum.photos/100"
+                width="150px"
+                class="avatar shadow"
+            />
+            <h1 class='header' id="ProfileName">Приветствую, {name}!</h1>
+
+            <div class="info-block">
+                <p class='info'>Подключение к бомберу: <span id='Connection'>ПОДКЛЮЧЕНИЕ...</span></p>
+                <p class='info '>Атак запущено: <span id='AttackCount'>0</span></p>
+            </div>
+
+            <button class="input rounded shadow" id='AttackToggler'>+ Создать атаку</button>
+            <div class='attack-menu rounded shadow'>
+                <input class='input rounded shadow' type='text' placeholder="Номер телефона" id="PhoneNumber" />
+                <input class='input rounded shadow' type='number' placeholder="Повторов" id="PhoneNumber" />
+                <button class='submit shadow rounded' id="AttackButton">Атаковать</button>
+            </div>
+
+            <button class="input shadow rounded theme-toggler" id="ThemeToggler">Переключить тему</button>
+        </div>
+
         <script src="lib/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='/socket.io/socket.io.js'></script>
         <script src='src/ui.js'></script>
+        <script src='src/lib.js'></script>
+        <script src='src/screens.js'></script>
         <script src="src/init.js"></script>
     </body>
 </html>

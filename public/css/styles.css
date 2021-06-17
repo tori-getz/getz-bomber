@@ -17,6 +17,8 @@ body {
     flex-direction: column;
     padding: 5px;
     margin: 5px;
+    display: none;
+    margin-top: 40px;
 }
 
 .rounded {
@@ -78,13 +80,65 @@ body {
     margin-left: 5px;
 }
 
-.auth {
-    margin-top: 40px;
-}
-
 .auth-form {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+}
+
+.error-text {
+    margin-left: 25px;
+    font-weight: 300;
+    color: #ff0000;
+    display: none;
+}
+
+.error-button {
+    color: #ff3d51;
+    display: none;
+}
+
+.avatar {
+    border-radius: 999999px;
+    margin: 25px;
+    align-self: center;
+}
+
+#ProfileName {
+    text-align: center;
+}
+
+.info {
+    align-self: center;
+    font-weight: 100;
+}
+
+.info-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.connected {
+    color: yellowgreen;
+}
+
+.toggled {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.attack-menu {
+    margin: 10px;
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    z-index: 999;
+    display: none;
+    padding-top: 20px;
 }

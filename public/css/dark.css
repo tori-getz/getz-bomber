@@ -20,3 +20,27 @@ body {
 .submit:hover {
     background-color: #022e73;
 }
+
+.error-button {
+    margin-top: 30px;
+    background-color: #fff0f1;
+    -webkit-box-shadow: 0px 5px 10px 2px #fff0f1;
+    -moz-box-shadow: 0px 5px 10px 2px #fff0f1;
+    box-shadow: 0px 5px 10px 2px #fff0f1;
+}
+
+.error-button:hover {
+    margin-top: 30px;
+    background-color: #fff0f1;
+    -webkit-box-shadow: 0px 5px 10px 2px #fff0f1;
+    -moz-box-shadow: 0px 5px 10px 2px #fff0f1;
+    box-shadow: 0px 5px 10px 2px #fff0f1;
+}
+
+.theme-toggler {
+    color: #0050d1;
+}
+
+.attack-menu {
+    background-color: #262626;
+}
