@@ -1,0 +1,22 @@
+
+body {
+    background-color: #262626;
+    color: #fff;
+}
+
+.container {
+    background-color: #404040;
+}
+
+.input {
+    background-color: #262626;
+    color: #fff;
+}
+
+.submit {
+    background-color: #0041a8;
+}
+
+.submit:hover {
+    background-color: #022e73;
+}

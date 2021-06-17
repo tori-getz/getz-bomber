@@ -1,0 +1,21 @@
+
+body {
+    background-color: #eee;
+    color: #000;
+}
+
+.input {
+    background-color: #fff;
+}
+
+.container {
+    background-color: #fff;
+}
+
+.submit {
+    background-color: #0050d1;
+}
+
+.submit:hover {
+    background-color: #0041a8;
+}
