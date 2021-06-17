@@ -1,5 +1,4 @@
 
 $(() => {
-    $('.title').html('lolo');
-    $('.theme-toggler').on('click', () => toggleTheme());
+    setTitle('Getz Bomber');
 });

@@ -14,3 +14,5 @@ const toggleTheme = () => {
         return;
     }
 }
+
+const setTitle = (title) => $('.title').html(title);
