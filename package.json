@@ -6,14 +6,16 @@
   "author": "tori-getz",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "random-token": "^0.0.8",
+    "request": "^2.88.2",
     "socket.io": "^4.1.2",
     "tymlogger": "^1.0.0"
   },
   "scripts": {
     "start": "node ./app.js",
-    "dev": "./node_modules/.bin/nodemon --watch '**' --ext 'js,json' --exec 'yarn start'"
+    "dev": "./node_modules/.bin/nodemon --watch '**' --ext 'js,json' --exec 'clear && yarn start'"
   },
   "devDependencies": {
     "@types/express": "^4.17.12",

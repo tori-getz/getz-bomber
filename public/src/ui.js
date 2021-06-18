@@ -19,6 +19,7 @@ const toggleTheme = () => {
 }
 
 $('.theme').attr('href', `css/${THEME}.css`);
+$('#PhoneNumber').mask('+70000000000');
 
 const setTitle = (title) => $('.title').html(title);
 
@@ -43,7 +44,8 @@ const setConnected = () => {
 }
 
 const SetDisconnected = () => {
-
+    $('#Connection').attr('class', 'disconnected');
+    $('#Connection').html("ОТКЛЮЧЕНО");
 }
 
 let attackTogglerClicked = false;

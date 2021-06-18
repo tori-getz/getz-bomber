@@ -6,6 +6,8 @@ const tymlogger = require('tymlogger');
 const path = require('path');
 const { Server } = require('socket.io');
 const generateUsers = require('./generateUsers');
+const bomber = require('./bomber');
+
 const { write, success } = new tymlogger();
 const app = express();
 
@@ -76,14 +78,29 @@ app.get('/constants', (req, res) => {
 });
 
 const {
-    ATTACKS
+    ATTACKS,
+    START,
+    SERVICES_COUNT
 } = require('./constants.json');
 
 io.on('connection', (socket) => {
     write('[SOCKET] new connection');
 
-    socket.broadcast.emit(ATTACKS, attacksCount);
+    socket.on(START, ({ phone, count }) => {
+        write(`[BOMBER] START ${phone} -> ${count} count`);
+        attacksCount++;
+        socket.emit(ATTACKS, attacksCount);
+        bomber.start(phone, count, () => {
+            success(`[BOMBER] ${phone} done`);
+            attacksCount--;
+            socket.emit(ATTACKS, attacksCount);
+        });
+    });
+
     socket.emit(ATTACKS, attacksCount);
+    socket.emit(SERVICES_COUNT, bomber.getCountOfServices());
+
+    socket.on('disconnect', () => write('[SOCKET] disconnected'));
 });
 
 server.listen(process.env.PORT || PORT, () => success(`Сервер запущен на ${process.env.PORT || PORT} порту.`));

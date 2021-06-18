@@ -1,4 +1,5 @@
 {
     "ATTACKS": "Attacks",
-    "SET_ATTACK": "SetAttack"
+    "START": "Start",
+    "SERVICES_COUNT": "ServicesCount"
 }

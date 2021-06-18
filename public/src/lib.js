@@ -21,8 +21,24 @@ const GetUser = () => {
     });
 }
 
-const ConnectToBomber = () => {
+const ConnectToBomber = (cb) => {
     const client = io('');
 
+    cb(client);
+
+    client.on(SERVICES_COUNT, servicesCount => {
+        $('#ServicesCount').html(servicesCount);
+    });
+
+    client.on('disconnect', () => {
+        SetDisconnected();
+    });
+
     setConnected();
+}
+
+const quitToAuth = (socket) => {
+    socket.disconnect();
+    localStorage.setItem('token', '');
+    location.reload();
 }
